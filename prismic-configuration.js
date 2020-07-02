@@ -12,20 +12,20 @@ export const accessToken = ''
 // -- Link resolution rules
 // Manages links to internal Prismic documents
 // Modify as your project grows to handle any new routes you've made
-export const linkResolver = (doc) => {
-  if (doc.type === 'post') {
-    return `/post/${doc.uid}`
-  }
-  return '/'
-}
+// export const linkResolver = (doc) => {
+//   if (doc.type === 'post') {
+//     return `/post/${doc.uid}`
+//   }
+//   return '/'
+// }
 
 // Additional helper function for Next/Link components
-export const hrefResolver = (doc) => {
-  if (doc.type === 'post') {
-    return `/post?uid=${doc.uid}`
-  }
-  return '/'
-}
+// export const hrefResolver = (doc) => {
+//   if (doc.type === 'post') {
+//     return `/post?uid=${doc.uid}`
+//   }
+//   return '/'
+// }
 
 // -- Client method to query Prismic
 // Connects to the given repository to facilitate data queries
