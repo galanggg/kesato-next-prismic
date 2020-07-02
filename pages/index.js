@@ -7,7 +7,6 @@ import Prismic from 'prismic-javascript'
 import { useEffect, useState } from 'react'
 
 const Home = (props) => {
-  console.log(props.posts.results[0].data.responsive_image)
   return (
     <div className="bg-gray-900 h-full">
       <Nav />
@@ -23,25 +22,25 @@ const Home = (props) => {
   )
 }
 
-Home.getInitialProps = async (context) => {
-  const home = await client.getSingle('blog_home')
-  const posts = await client.query(
-    Prismic.Predicates.at('document.type', 'post'),
-    { orderings: '[my.post.date desc]' },
-  )
-
-  return { home, posts }
-}
-// export async function getStaticProps(context) {
+// Home.getInitialProps = async (context) => {
 //   const home = await client.getSingle('blog_home')
 //   const posts = await client.query(
 //     Prismic.Predicates.at('document.type', 'post'),
 //     { orderings: '[my.post.date desc]' },
 //   )
 
-//   return {
-//     props: { home, posts },
-//   }
+//   return { home, posts }
 // }
+export async function getStaticProps(context) {
+  const home = await client.getSingle('blog_home')
+  const posts = await client.query(
+    Prismic.Predicates.at('document.type', 'post'),
+    { orderings: '[my.post.date desc]' },
+  )
+
+  return {
+    props: { home, posts },
+  }
+}
 
 export default Home
