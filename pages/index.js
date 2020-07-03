@@ -31,7 +31,7 @@ const Home = (props) => {
 
 //   return { home, posts }
 // }
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const home = await client.getSingle('blog_home')
   const posts = await client.query(
     Prismic.Predicates.at('document.type', 'post'),
