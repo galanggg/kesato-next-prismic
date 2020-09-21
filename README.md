@@ -1,5 +1,7 @@
 # Example Blog using Prismic + Next + Vercel Serverless guide
 
+## Intern Project @Kesato
+
 Follow along with the instructions in the Zeit guide to build a minimalist blog using Prismic as a CMS with Next.js deployed in Now as a serverless app.
 
 ### Install instructions
